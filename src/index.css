@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Refined Light Theme: Pure and Professional */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Solid Modern Indigo - The "Trust" Color */
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Clean Mint Accent - The "Action/Fresh" Color */
+    --accent: 173 80% 40%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --radius: 0.75rem;
+    
+    /* Surfaces */
+    --surface-elevated: 0 0% 98%;
+    --surface-hover: 240 4.8% 94%;
+  }
+
+  .dark {
+    --background: 240 10% 2%; /* Slightly deeper dark for better contrast */
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263.4 70% 60%; /* Slightly brighter for dark mode legibility */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 3.7% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 70%;
+
+    --accent: 173 80% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --border: 240 3.7% 12%;
+    --input: 240 3.7% 12%;
+    --ring: 263.4 70% 50.4%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01"; /* Inter premium features */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom Selection Color */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground dark:text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tighter text-foreground;
+    line-height: 1.1;
+  }
+
+  /* Refined Scrollbar for modern browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full border-4 border-solid border-background hover:bg-muted-foreground/40 transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Bento Grid Glass Effect */
+  .glass-card {
+    @apply bg-white/40 dark:bg-white/[0.02] border border-black/5 dark:border-white/5 backdrop-blur-xl shadow-sm transition-all duration-300;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hero Section Typography Enhancement */
+  .hero-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-foreground via-foreground to-foreground/60;
+  }
+
+  /* Subtitle/Muted text utility */
+  .text-description {
+    @apply text-muted-foreground text-sm md:text-base leading-relaxed;
+  }
+
+  /* Code snippet styling */
+  .font-mono {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Fira+Code:wght@400;500&display=swap');
