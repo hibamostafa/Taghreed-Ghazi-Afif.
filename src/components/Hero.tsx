@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 // Assets
 import cvFile from "@/assets/Taghreed Ghazi Afif_CV.pdf";
-import profileImg from "@/assets/profile.png";
+import profileImg from "@/assets/Profile.png";
 import reference from "@/assets/Reference.pdf";
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
